@@ -1,4 +1,15 @@
-### TESTE GFT - CIELO
+## Necessário para rodar o projeto:
+
+NodeJs instalado
+npm instalado
+angular CLI instaldo
+
+1° npm instal dentro da pasta do projeto;
+2º ng serve dentro da pasta projeto;
+3º acessar localhost:4200/heroes;
+4º fun;
+
+## TESTE GFT - CIELO
 
 ## API UTILIZADA PARA O TESTE = https://developer.marvel.com/ (API Pública da marvel)
 
