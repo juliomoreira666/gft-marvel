@@ -1,0 +1,98 @@
+<div class="row text-center margin-reset">
+  <div class="container">
+    <div class="col-md-12">
+      <img
+        class="img-fluid"
+        src="../../assets/log.gif"
+        alt="Logo Da marvel"
+        title="Logo da marvel"
+      />
+    </div>
+    <div class="col-md-12 title">
+      <h1>Feito com s2 por Júlio Moreira</h1>
+    </div>
+  </div>
+  <div id="columns">
+    <div *ngFor="let heroes of heroes.data.results; let heroi = index">
+      <figure (click)="getHeroDetails(heroes.id)">
+        <img
+          [attr.src]="heroes.thumbnail.path + '.' + heroes.thumbnail.extension"
+          [attr.alt]="heroes.name"
+          [attr.title]="heroes.name"
+        />
+        <figcaption>
+          <h2>{{ heroes.name }}</h2>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="col-md-12 block-more">
+    <div class="container">
+      <button
+        type="button"
+        class="btn btn-primary btn-lg btn-block"
+        (click)="showHeroes(heroes.data.offset + numberOffSet)"
+      >
+        More Hereos
+      </button>
+    </div>
+  </div>
+</div>
+<div class="row loading text-center" *ngIf="loading">
+  <img src="../../assets/loading.gif" class="img-responsive" />
+</div>
+
+<div
+  *ngIf="modalDetails"
+  style="display: block;"
+  class="modal fade show"
+  id="exampleModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h3 class="modal-title" id="exampleModalLabel">
+          {{ hero.data.results[0].name }}
+        </h3>
+        <button
+          (click)="fecharDetails()"
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body text-center">
+        <img
+          class="img-fluid"
+          [attr.src]="
+            hero.data.results[0].thumbnail.path +
+            '.' +
+            hero.data.results[0].thumbnail.extension
+          "
+        />
+        <h3>Descrição:</h3>
+        <p>{{ hero.data.results[0].description }}</p>
+        <p class="text-danger" *ngIf="hero.data.results[0].description === ''">
+          Sem descrição
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button
+          (click)="fecharDetails()"
+          type="button"
+          class="btn btn-secondary"
+          data-dismiss="modal"
+        >
+          Fechar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

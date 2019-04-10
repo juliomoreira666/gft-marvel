@@ -1,4 +1,12 @@
-# ApiGftHeroes
+### TESTE GFT - CIELO
+
+## API UTILIZADA PARA O TESTE = https://developer.marvel.com/ (API Pública da marvel)
+
+## Totalmente Responsivo com grid
+
+## Tecnologias utilizadas: Angular 7, bootstrap, css grid
+
+## ApiGftHeroes
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
 
